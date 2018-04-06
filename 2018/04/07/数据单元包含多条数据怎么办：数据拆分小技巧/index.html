@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="default">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="NLP，机器学习，深度学习，数据分析" />
+  <meta name="keywords" content="数据处理,Python,数据分析," />
 
 
 
@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="stay hungry, stay foolish.">
-<meta name="keywords" content="NLP，机器学习，深度学习，数据分析">
-<meta property="og:type" content="website">
-<meta property="og:title" content="核桃也是桃啊">
-<meta property="og:url" content="https://chaoongithub.github.io/tags/机器学习/index.html">
+<meta name="description" content="今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:   上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。  具体代码示">
+<meta name="keywords" content="数据处理,Python,数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据单元包含多条数据怎么办：数据拆分小技巧">
+<meta property="og:url" content="https://chaoongithub.github.io/2018/04/07/数据单元包含多条数据怎么办：数据拆分小技巧/index.html">
 <meta property="og:site_name" content="核桃也是桃啊">
-<meta property="og:description" content="stay hungry, stay foolish.">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:   上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。  具体代码示">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-192b91f05d2b097262ebd1c799d562f0_hd.jpg">
+<meta property="og:updated_time" content="2018-04-06T16:29:40.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="核桃也是桃啊">
-<meta name="twitter:description" content="stay hungry, stay foolish.">
+<meta name="twitter:title" content="数据单元包含多条数据怎么办：数据拆分小技巧">
+<meta name="twitter:description" content="今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:   上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。  具体代码示">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg">
 
 
 
@@ -97,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -105,7 +109,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://chaoongithub.github.io/tags/机器学习/"/>
+  <link rel="canonical" href="https://chaoongithub.github.io/2018/04/07/数据单元包含多条数据怎么办：数据拆分小技巧/"/>
 
 
 
 
 
-  <title>Tag: 机器学习 | 核桃也是桃啊</title>
+  <title>数据单元包含多条数据怎么办：数据拆分小技巧 | 核桃也是桃啊</title>
   
 
 
@@ -137,14 +141,14 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -180,52 +184,42 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-主页">
           <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            主页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-关于">
           <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-标签">
           <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-分类">
           <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            Schedule
+            分类
           </a>
         </li>
       
@@ -238,7 +232,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            搜索
           </a>
         </li>
       
@@ -258,7 +252,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
+             placeholder="搜索..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -282,54 +276,233 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>机器学习<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chaoongithub.github.io/2018/04/07/数据单元包含多条数据怎么办：数据拆分小技巧/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张海超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="核桃也是桃啊">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/05/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">数据单元包含多条数据怎么办：数据拆分小技巧</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T23:01:32+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T00:05:34+08:00">
+                2018-04-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据处理/" itemprop="url" rel="index">
+                    <span itemprop="name">数据处理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:
+<img src="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg" alt="image"></p>
+<blockquote>
+<p>上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。</p>
+</blockquote>
+<p>具体代码示例如下：</p>
+<ul>
+<li><strong>导入pandas</strong></li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame,Series</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>读入数据</strong></li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">raw_data=pd.read_excel(<span class="string">'./2008-2017.xlsx'</span>,header=<span class="number">0</span>)</span><br><span class="line">raw_data.columns</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>数据拆分</strong></li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raw_tor=raw_data.drop(<span class="string">'Licensing_TRANSFEROR'</span>,axis=<span class="number">1</span>).join(raw_data[<span class="string">'Licensing_TRANSFEROR'</span>].str.split(<span class="string">';'</span>,expand=<span class="keyword">True</span>).stack().reset_index(level=<span class="number">1</span>,drop=<span class="keyword">True</span>).rename(<span class="string">'Licensing_TRANSFEROR'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>其中：
+<strong>stack</strong>：该方法可以参考pandas.DataFrame.stack，参数如下：</p>
+<blockquote>
+<p><strong>Parameters</strong>:
+level : int, string, or list of these, default last.
+dropna : boolean, default True.&lt;br&gt;
+<strong>Returns</strong>:
+stacked : DataFrame or Series</p>
+</blockquote>
+<p>该方法可以认为是将数据的一轴旋转堆叠，返回具有层次索引的DataFrame，默认是对最内层轴，返回结果自动排序，官方给出的例子如下：</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;s</span><br><span class="line">     a   b</span><br><span class="line">one  <span class="number">1.</span>  <span class="number">2.</span></span><br><span class="line">two  <span class="number">3.</span>  <span class="number">4.</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;s.stack()</span><br><span class="line">one a    <span class="number">1</span></span><br><span class="line">    b    <span class="number">2</span></span><br><span class="line">two a    <span class="number">3</span></span><br><span class="line">    b    <span class="number">4</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>reset_index</strong>：该方法可以参考pandas.DataFrame.reset_index，参数如下：
+该方法可以实现对指定的列的重新索引，官方例子如下：</p>
+<blockquote>
+<p><strong>Parameters</strong>:&lt;br&gt;
+level : int, str, tuple, or list, default None.
+drop : boolean, default False.
+inplace : boolean, default False.
+col_level : int or str, default 0.
+col_fill : object, default . &lt;br&gt;
+<strong>Returns</strong>: &lt;br&gt;
+resetted : DataFrame</p>
+</blockquote>
+<p>该方法可以实现对指定的列的重新索引，官方例子如下：</p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;df = pd.DataFrame([(<span class="string">'bird'</span>,    <span class="number">389.0</span>),</span><br><span class="line"><span class="meta">... </span>                   (<span class="string">'bird'</span>,     <span class="number">24.0</span>),</span><br><span class="line"><span class="meta">... </span>                   (<span class="string">'mammal'</span>,   <span class="number">80.5</span>),</span><br><span class="line"><span class="meta">... </span>                   (<span class="string">'mammal'</span>, np.nan)],</span><br><span class="line"><span class="meta">... </span>                  index=[<span class="string">'falcon'</span>, <span class="string">'parrot'</span>, <span class="string">'lion'</span>, <span class="string">'monkey'</span>],</span><br><span class="line"><span class="meta">... </span>                  columns=(<span class="string">'class'</span>, <span class="string">'max_speed'</span>))</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;df</span><br><span class="line">         <span class="class"><span class="keyword">class</span>  <span class="title">max_speed</span></span></span><br><span class="line"><span class="class"><span class="title">falcon</span>    <span class="title">bird</span>      389.0</span></span><br><span class="line"><span class="class"><span class="title">parrot</span>    <span class="title">bird</span>       24.0</span></span><br><span class="line"><span class="class"><span class="title">lion</span>    <span class="title">mammal</span>       80.5</span></span><br><span class="line"><span class="class"><span class="title">monkey</span>  <span class="title">mammal</span>        <span class="title">NaN</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&gt;&gt;&gt;<span class="title">df</span>.<span class="title">reset_index</span><span class="params">(drop=True)</span></span></span><br><span class="line"><span class="class">    <span class="title">class</span>  <span class="title">max_speed</span></span></span><br><span class="line"><span class="class">0    <span class="title">bird</span>      389.0</span></span><br><span class="line"><span class="class">1    <span class="title">bird</span>       24.0</span></span><br><span class="line"><span class="class">2  <span class="title">mammal</span>       80.5</span></span><br><span class="line"><span class="class">3  <span class="title">mammal</span>        <span class="title">NaN</span></span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>数据导出</strong></li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raw_tor.to_excel(<span class="string">'./2008-2017_new.xlsx'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>处理结果如下：
+<img src="https://pic1.zhimg.com/80/v2-192b91f05d2b097262ebd1c799d562f0_hd.jpg" alt="image"></p>
+<p>最后，数据拆分还是能用到很多分析之中，具体到上面这个案例是在分析专利许可数据。后期的让与人和受让人之间的专利许可网络分析、专利权人社会网络分析都要首先进行该处理。</p>
+<p><strong>参考文献</strong></p>
+<ol>
+<li><a href="https://www.cnblogs.com/lemonbit/p/7270045.html" target="_blank" rel="noopener">https://www.cnblogs.com/lemonbit/p/7270045.html</a>&lt;br&gt;</li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html" target="_blank" rel="noopener">http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html</a>&lt;br&gt;</li>
+<li><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.stack.html" target="_blank" rel="noopener">http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.stack.html</a></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据处理/" rel="tag"># 数据处理</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/06/博客搬家啦/" rel="next" title="博客搬家啦~">
+                <i class="fa fa-chevron-left"></i> 博客搬家啦~
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +510,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -363,10 +540,10 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.gif"
-                alt="Stevenzz" />
+                src="/images/avatar.jpg"
+                alt="张海超" />
             
-              <p class="site-author-name" itemprop="name">Stevenzz</p>
+              <p class="site-author-name" itemprop="name">张海超</p>
               <p class="site-description motion-element" itemprop="description">stay hungry, stay foolish.</p>
           </div>
 
@@ -378,11 +555,20 @@
                 <a href="/archives">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -390,8 +576,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -410,21 +596,15 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="289637169@qq.com.com" target="_blank" title="E-Mail">
+                    <a href="289637169@qq.com.com" target="_blank" title="邮箱">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-envelope"></i>邮箱</a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://weibo.com/zhangmubai" target="_blank" title="weibo">
+                    <a href="https://weibo.com/zhangmubai" target="_blank" title="微博">
                       
-                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/zhanghc-14/" target="_blank" title="zhihu">
-                      
-                        <i class="fa fa-fw fa-zhihu"></i>zhihu</a>
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
                   </span>
                 
             </div>
@@ -459,13 +639,13 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ZHANG Haichao</span>
+  <span class="author" itemprop="copyrightHolder">张海超</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -473,7 +653,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -594,6 +774,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
