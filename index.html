@@ -220,6 +220,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -383,7 +393,9 @@
           今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:
 
 
-上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这
+上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。
+
+具体代码示
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -533,7 +545,7 @@
           
           博客搬家啦
 今天开始，博客正式搬家了，来到了github.io，这一圣地。
-我的github地址：ChaoOnGithub。&lt;br&gt;
+我的github地址：ChaoOnGithub。
 这里算是自己的技术随想、生活感悟和三言两语的精神家园!
 
           
@@ -669,15 +681,15 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="289637169@qq.com.com" target="_blank" title="邮箱">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>邮箱</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
                     <a href="https://weibo.com/zhangmubai" target="_blank" title="微博">
                       
                         <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/zhanghc-14/" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
                   </span>
                 
             </div>
@@ -687,6 +699,20 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.github.com/" title="github" target="_blank">github</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           

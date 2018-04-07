@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="核桃也是桃啊">
 <meta property="og:description" content="今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:   上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。  具体代码示">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-192b91f05d2b097262ebd1c799d562f0_hd.jpg">
-<meta property="og:updated_time" content="2018-04-06T16:29:40.676Z">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEBf8b0f07fd7f2e2dcb47f2a23515d250c?method=download&shareKey=171762503b993f397095a4b3e84c3730">
+<meta property="og:image" content="https://note.youdao.com/yws/api/personal/file/WEB8f6063c15a7c24d968f514b8a06b9251?method=download&shareKey=23c693bcecd2233518a3aae89d1fcdea">
+<meta property="og:updated_time" content="2018-04-07T05:33:02.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据单元包含多条数据怎么办：数据拆分小技巧">
 <meta name="twitter:description" content="今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:   上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。  具体代码示">
-<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/personal/file/WEBf8b0f07fd7f2e2dcb47f2a23515d250c?method=download&shareKey=171762503b993f397095a4b3e84c3730">
 
 
 
@@ -220,6 +220,16 @@
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -385,7 +395,7 @@
 
       
         <p>今天遇到一个数据拆分的问题，觉着有必要记录下来。在做数据处理时，我们会经常遇到一个数据单元格包含多个数据的情况，例如如下的数据:
-<img src="https://pic4.zhimg.com/80/v2-8bca935f56119d11edfb048025aee307_hd.jpg" alt="image"></p>
+<img src="https://note.youdao.com/yws/api/personal/file/WEBf8b0f07fd7f2e2dcb47f2a23515d250c?method=download&amp;shareKey=171762503b993f397095a4b3e84c3730" alt="image"></p>
 <blockquote>
 <p>上图红框中，Licensing_TRANSFEROR列的单元格中含有3值，并且以“；”分割。而在后续的共现分析、网络分析等多种分析则要求我们应该将其拆分成三条数据。这时我们可以尝试用到pandas中的stack、reset_index和join等方法。</p>
 </blockquote>
@@ -432,7 +442,7 @@ resetted : DataFrame</p>
 </ul>
 <p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raw_tor.to_excel(<span class="string">'./2008-2017_new.xlsx'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>处理结果如下：
-<img src="https://pic1.zhimg.com/80/v2-192b91f05d2b097262ebd1c799d562f0_hd.jpg" alt="image"></p>
+<img src="https://note.youdao.com/yws/api/personal/file/WEB8f6063c15a7c24d968f514b8a06b9251?method=download&amp;shareKey=23c693bcecd2233518a3aae89d1fcdea" alt="image"></p>
 <p>最后，数据拆分还是能用到很多分析之中，具体到上面这个案例是在分析专利许可数据。后期的让与人和受让人之间的专利许可网络分析、专利权人社会网络分析都要首先进行该处理。</p>
 <p><strong>参考文献</strong></p>
 <ol>
@@ -449,6 +459,35 @@ resetted : DataFrame</p>
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="张海超 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="张海超 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -510,6 +549,11 @@ resetted : DataFrame</p>
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTUyMy8xMjA1OQ=="></div>
+    </div>
 
   
 
@@ -596,15 +640,15 @@ resetted : DataFrame</p>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="289637169@qq.com.com" target="_blank" title="邮箱">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>邮箱</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
                     <a href="https://weibo.com/zhangmubai" target="_blank" title="微博">
                       
                         <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/zhanghc-14/" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
                   </span>
                 
             </div>
@@ -614,6 +658,20 @@ resetted : DataFrame</p>
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.github.com/" title="github" target="_blank">github</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -806,6 +864,17 @@ resetted : DataFrame</p>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
